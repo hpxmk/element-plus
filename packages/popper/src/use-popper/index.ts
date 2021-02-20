@@ -21,13 +21,14 @@ import type {
   RefElement,
 } from './defaults'
 
-type ElementType = ComponentPublicInstance | HTMLElement
+export type ElementType = ComponentPublicInstance | HTMLElement
+export type EmitType = 'update:visible' | 'after-enter' | 'after-leave' | 'before-enter' | 'before-leave'
 
 export const DEFAULT_TRIGGER = ['hover']
 export const UPDATE_VISIBLE_EVENT = 'update:visible'
 export default function(
   props: IPopperOptions,
-  { emit }: SetupContext<string[]>,
+  { emit }: SetupContext<EmitType[]>,
 ) {
   const arrowRef = ref<RefElement>(null)
   const triggerRef = ref(null) as Ref<ElementType>
@@ -69,10 +70,10 @@ export default function(
   })
 
   function _show() {
-    if (props.hideAfter > 0) {
+    if (props.autoClose > 0) {
       hideTimer = window.setTimeout(() => {
         _hide()
-      }, props.hideAfter)
+      }, props.autoClose)
     }
     visibility.value = true
   }
@@ -101,10 +102,10 @@ export default function(
   const hide = () => {
     if (isManualMode()) return
     clearTimers()
-    if (props.closeDelay > 0) {
+    if (props.hideAfter > 0) {
       hideTimer = window.setTimeout(() => {
         close()
-      }, props.closeDelay)
+      }, props.hideAfter)
     } else {
       close()
     }

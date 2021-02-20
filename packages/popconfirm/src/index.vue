@@ -1,7 +1,7 @@
 <template>
   <el-popper
     v-model:visible="visible"
-    :trigger="['click']"
+    trigger="click"
     effect="light"
     popper-class="el-popover"
     append-to-body
@@ -43,7 +43,7 @@
 import { defineComponent, ref, computed } from 'vue'
 import ElButton from '@element-plus/button'
 import ElPopper from '@element-plus/popper'
-import { t } from '../../locale'
+import { t } from '@element-plus/locale'
 
 export default defineComponent({
   name: 'ElPopconfirm',

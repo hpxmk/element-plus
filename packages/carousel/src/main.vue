@@ -118,6 +118,10 @@ export default defineComponent({
         return ['horizontal', 'vertical'].includes(val)
       },
     },
+    pauseOnHover: {
+      type: Boolean,
+      default: true,
+    },
   },
   emits: ['change'],
   setup(props: ICarouselProps, { emit }) {
@@ -236,8 +240,16 @@ export default defineComponent({
       })
     }
 
-    function updateItems(item) {
+    function addItem(item) {
       items.value.push(item)
+    }
+
+    function removeItem(uid) {
+      const index = items.value.findIndex(item => item.uid === uid)
+      if (index !== -1) {
+        items.value.splice(index, 1)
+        if(data.activeIndex === index) next()
+      }
     }
 
     function itemInStage(item, index) {
@@ -262,7 +274,9 @@ export default defineComponent({
 
     function handleMouseEnter() {
       data.hover = true
-      pauseTimer()
+      if (props.pauseOnHover) {
+        pauseTimer()
+      }
     }
 
     function handleMouseLeave() {
@@ -358,7 +372,8 @@ export default defineComponent({
       type: props.type,
       items,
       loop: props.loop,
-      updateItems,
+      addItem,
+      removeItem,
       setActiveItem,
     })
 
