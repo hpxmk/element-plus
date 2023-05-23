@@ -36,13 +36,13 @@ export default {
       month12: 'Prosinac',
       week: 'tjedan',
       weeks: {
-        sun: 'Pon',
-        mon: 'Uto',
-        tue: 'Sri',
-        wed: 'Čet',
-        thu: 'Pet',
-        fri: 'Sub',
-        sat: 'Ned',
+        sun: 'Ned',
+        mon: 'Pon',
+        tue: 'Uto',
+        wed: 'Sri',
+        thu: 'Čet',
+        fri: 'Pet',
+        sat: 'Sub',
       },
       months: {
         jan: 'Jan',
@@ -76,6 +76,12 @@ export default {
       pagesize: '/stranica',
       total: 'Ukupno {total}',
       pageClassifier: '',
+      page: 'Page', // to be translated
+      prev: 'Go to previous page', // to be translated
+      next: 'Go to next page', // to be translated
+      currentPage: 'page {pager}', // to be translated
+      prevPages: 'Previous {pager} pages', // to be translated
+      nextPages: 'Next {pager} pages', // to be translated
     },
     messagebox: {
       title: 'Poruka',

@@ -76,6 +76,12 @@ export default {
       pagesize: '件/ページ',
       total: '総計 {total} 件',
       pageClassifier: 'ページ目へ',
+      page: 'Page', // to be translated
+      prev: 'Go to previous page', // to be translated
+      next: 'Go to next page', // to be translated
+      currentPage: 'page {pager}', // to be translated
+      prevPages: 'Previous {pager} pages', // to be translated
+      nextPages: 'Next {pager} pages', // to be translated
     },
     messagebox: {
       title: 'メッセージ',
@@ -108,14 +114,14 @@ export default {
       hasCheckedFormat: '{checked}/{total} を選択した',
     },
     image: {
-      error: 'FAILED', // to be translated
+      error: '失敗',
     },
     pageHeader: {
-      title: 'Back', // to be translated
+      title: '戻る',
     },
     popconfirm: {
-      confirmButtonText: 'Yes', // to be translated
-      cancelButtonText: 'No', // to be translated
+      confirmButtonText: 'はい',
+      cancelButtonText: 'いいえ',
     },
   },
 }

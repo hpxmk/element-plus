@@ -73,9 +73,15 @@ export default {
     },
     pagination: {
       goto: 'Idź do',
-      pagesize: '/strona',
+      pagesize: '/stronę',
       total: 'Wszystkich {total}',
       pageClassifier: '',
+      page: 'Page', // to be translated
+      prev: 'Go to previous page', // to be translated
+      next: 'Go to next page', // to be translated
+      currentPage: 'page {pager}', // to be translated
+      prevPages: 'Previous {pager} pages', // to be translated
+      nextPages: 'Next {pager} pages', // to be translated
     },
     messagebox: {
       title: 'Wiadomość',
@@ -108,14 +114,14 @@ export default {
       hasCheckedFormat: 'wybranych: {checked}/{total}',
     },
     image: {
-      error: 'FAILED', // to be translated
+      error: 'BŁĄD',
     },
     pageHeader: {
-      title: 'Back', // to be translated
+      title: 'Wstecz',
     },
     popconfirm: {
-      confirmButtonText: 'Yes', // to be translated
-      cancelButtonText: 'No', // to be translated
+      confirmButtonText: 'Tak',
+      cancelButtonText: 'Nie',
     },
   },
 }
